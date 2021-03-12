@@ -1,17 +1,31 @@
 import "./App.css";
 import React, { Component } from "react";
 
-import Person from "./components/Person";
+import Book from "./components/Book";
 
 class App extends Component {
+  state = {
+    books: [
+      { name: "Mohapurush", writer: "Humayun Ahmed" },
+      { name: "Misir Ali Omnibus", writer: "Humayun Ahmed" },
+      { name: "Guha", writer: "Sanjib Chattopadhyay" },
+    ],
+  };
+  handleInputNameChange = (e, book) => {
+    // console.log(e.target, book);
+    book.name = e.target.value;
+    const books = [...this.state.books];
+    books[book.index] = book;
+    this.setState({ books });
+  };
   render() {
+    const { books } = this.state;
     return (
       <div className="App">
         <h3>Hello React</h3>
-        <Person name="Saikot" age="30"></Person>
-        <Person name="Sagor" age="26"></Person>
-        <Person name="Shawon" age="23"></Person>
-        <Person name="Abir" age="27"></Person>
+        {books.map((book, index) => (
+          <Book book={{ ...book, index }} event={this.handleInputNameChange} />
+        ))}
       </div>
     );
   }
