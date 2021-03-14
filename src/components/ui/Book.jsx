@@ -9,6 +9,7 @@ export default function Book(props) {
       key={book.id}
       book={book}
       // event={this.handleInputNameChange}
+      bookClickHandle={props.bookClickHandle}
     />
   ));
 }

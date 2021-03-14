@@ -5,7 +5,13 @@
   padding: 1.2rem;
   margin: 10px 20px;
 }
-
+.book:hover{
+  color: orange;
+  cursor: pointer;
+}
+.container a{
+  color:black
+}
 .nav-bar ul{
   list-style: none;
   padding: 0;
@@ -28,7 +34,12 @@ text-decoration: none;
 color: aliceblue;
   
 }
+.nav-bar a:hover,.nav-bar a.active{
+  color:orange
+} 
 .container{
   max-width:1200px;
-  margin:auto
+  margin: 10px auto;
+  padding:10px;
+  text-align: center;
 }

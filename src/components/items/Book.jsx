@@ -1,14 +1,19 @@
+import { Link, withRouter } from "react-router-dom";
+
 const Book = (props) => {
-  const { name, writer } = props.book;
+  // console.log("Book",props)
+  const { name, writer, id } = props.book;
   return (
-    <div className="book">
-      <h4>Book: {name}</h4>
-      <p>Writer: {writer}</p>
-    </div>
+    <Link to={`/book/${id}`}>
+      <div className="book" onClick={() => props.bookClickHandle(id)}>
+        <h4>Book: {name}</h4>
+        <p>Writer: {writer}</p>
+      </div>
+    </Link>
   );
 };
 
-export default Book;
+export default withRouter(Book);
 
 /* <input
 type="text"
