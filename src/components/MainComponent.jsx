@@ -4,6 +4,7 @@ import Book from "./ui/Book";
 import NewBook from "./items/NewBook";
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import BookDetails from "./items/BookDetails";
+import NewBookUncontrolled from "./items/NewBookUncontrolled";
 
 class MainComponent extends Component {
   state = {
