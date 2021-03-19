@@ -5,6 +5,7 @@ import NewBook from "./items/NewBook";
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import BookDetails from "./items/BookDetails";
 import NewBookUncontrolled from "./items/NewBookUncontrolled";
+import Fetch from "./items/Fetch";
 
 class MainComponent extends Component {
   state = {
@@ -33,6 +34,9 @@ class MainComponent extends Component {
                 </NavLink>
               </li>
             )}
+            <li>
+              <NavLink to="/fetch/">Fetch</NavLink>
+            </li>
           </ul>
         </nav>
         <div className="container">
@@ -55,6 +59,7 @@ class MainComponent extends Component {
               path="/book/:id"
               render={() => bookSelected && <BookDetails book={bookSelected} />}
             ></Route>
+            <Route path="/fetch" render={() => <Fetch />}></Route>
             <Redirect from="/" to="/books">
               {" "}
             </Redirect>
